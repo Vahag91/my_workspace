@@ -1,5 +1,7 @@
 import React from "react"
+import { Link } from "react-router-dom";
 import styles from './Header.module.css'
+
 import { FaSistrix, FaList, FaClipboardUser, FaRegBell, FaRegCircleQuestion } from "react-icons/fa6";
 
 const Header: React.FC = () => {
@@ -11,10 +13,11 @@ const Header: React.FC = () => {
                 <ul className={styles.navList}>
                     <li> <a href="#"> <span><FaList /> </span></a></li>
                     <li> <a href="#"> <span><FaClipboardUser /> Trello</span></a></li>
-                    <li> <a href="#"> <span>Workspaces</span></a></li>
-                    <li> <a href="#"> <span>Recent </span></a></li>
-                    <li> <a href="#"> <span>Shared Boards</span></a></li>
-                    <li> <a href="#"> <span>Templates</span></a></li>
+                    <li> <Link to="/"> <span>MainPage</span></Link></li>
+                    <li> <Link to="/user"> <span>User</span></Link></li>
+                    <li> <Link to="/registration"> <span>Registration </span></Link></li>
+                    <li> <Link to="/workspace"> <span>Workspace</span></Link></li>
+                    
                 </ul>
 
 
