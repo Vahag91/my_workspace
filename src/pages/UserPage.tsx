@@ -1,11 +1,13 @@
 import React from "react";
-
+import UserProfile from "../widgets/UserProfile/UserProfile";
 
 const UserPage:React.FC = () => {
 
     return (
 
-        <div>  UserPage</div>
+        <div> 
+             <UserProfile/>
+              </div>
     )
 }
 

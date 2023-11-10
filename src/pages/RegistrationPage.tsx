@@ -6,7 +6,7 @@ const RegistrationPage: React.FC = () => {
     return (
 
         <div>
-     <Registration/>
+            <Registration />
         </div>
     )
 }

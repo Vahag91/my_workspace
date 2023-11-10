@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const WelcomePage:React.FC = () => {
+const WelcomePage: React.FC = () => {
 
     return (
 

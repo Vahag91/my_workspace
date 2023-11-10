@@ -1,11 +1,12 @@
 import React from "react";
+import SideBar from "../widgets/SideBar";
 
-
-const WorkspacePage:React.FC = () => {
+const WorkspacePage: React.FC = () => {
 
     return (
-
-        <div> Regisration Page</div>
+        <div>
+           <SideBar/>
+        </div>
     )
 }
 
