@@ -7,8 +7,11 @@ const MainPage:React.FC = () => {
     return (
 
         <div>
-           <TodoCard/>
-             
+            <ol>
+        <TodoCardList/>
+        <TodoCardList/>
+        <TodoCardList/>
+        </ol>
               </div>
         
     )
