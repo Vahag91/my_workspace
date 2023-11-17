@@ -1,8 +1,10 @@
-import React, { lazy, Suspense } from "react"
+import React, { lazy, Suspense, useEffect, useState } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { onAuthStateChanged, User, signOut } from "firebase/auth"
 
 import Header from "../widgets/Header"
 import Loading from "../features/Loading"
+import { auth } from '../firebase'
 
 const MainPage = lazy(() => import('../pages/MainPage'))
 const RegistrationPage = lazy(() => import('../pages/RegistrationPage'))
@@ -13,19 +15,50 @@ const UserPage = lazy(() => import('../pages/UserPage'))
 
 const App: React.FC = () => {
 
+    const [user, setUser] = useState<User | null>(null)
+
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser)
+        })
+        return unsubscribe
+    }, [])
+
+    const handleSignOut = () => {
+        signOut(auth).catch(err => console.log(err))
+
+    }
+
+console.log(user);
 
     return (
         <BrowserRouter>
-         <Header />
+            <Header />
+            <button onClick={handleSignOut}> click</button>
             <div>
-               <Suspense fallback={<Loading/>}>
-                <Routes>
-                    <Route path="/user" element={<UserPage />} />
-                    <Route path="/registration" element={<RegistrationPage />} />
-                    <Route path="/workspace" element={<WorkspacePage />} />
-                    <Route path="/" element={<MainPage />} />
+                <Suspense fallback={<Loading />}>
+{user? (
+   <Routes>
+                      
+                       
+                            
+   <Route path="/user" element={<UserPage />} />
+   <Route path="/workspace" element={<WorkspacePage />} />
+   <Route path="/" element={<MainPage />} />
+   </Routes>
+):(
+    <Routes>
+   <Route path="/" element={<RegistrationPage handleSignOut={handleSignOut} user={user} />} />
+    </Routes>
+)
+}
+                 
+                        
 
-                </Routes>
+
+
+                  
                 </Suspense>
             </div>
         </BrowserRouter>

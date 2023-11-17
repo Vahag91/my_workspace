@@ -1,8 +1,9 @@
 import React from "react"
 import { Link } from "react-router-dom";
 import styles from './Header.module.css'
-
 import { FaSistrix, FaList, FaClipboardUser, FaRegBell, FaRegCircleQuestion } from "react-icons/fa6";
+
+
 
 const Header: React.FC = () => {
 
@@ -30,7 +31,7 @@ const Header: React.FC = () => {
                         <ul className={styles.navIcons}>
                             <li> <a href="#"> <span><FaRegBell /></span></a></li>
                             <li> <a href="#"> <span><FaRegCircleQuestion /></span></a></li>
-                            <li> <a href="#"> <span>Icon</span></a></li>
+                           
                         </ul>
 
                     </div>

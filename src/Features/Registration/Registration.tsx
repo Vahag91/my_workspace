@@ -1,9 +1,13 @@
 import React from "react"
 import styles from './Registration.module.css'
 import { FaUser, FaPaperPlane, FaLock } from "react-icons/fa6";
+import SignIn from "../SignIn";
+import { RegistrationProps } from "./Registration.inteface";
 
-const Registration: React.FC = () => {
+const Registration: React.FC<RegistrationProps> = ({user,handleSignOut}) => {
 
+
+    
     return (
         <div className={styles.container}>
 
@@ -31,7 +35,9 @@ const Registration: React.FC = () => {
                     <div className={styles.btnGroup}>
                         <button> Sign up</button>
                         <button> Log in </button>
+                    
                     </div>
+                    <SignIn/>
                 </form>
             </div>
         </div>

@@ -5,10 +5,10 @@ import TodoCardList from "../shared/TodoCardList";
 const WorkspacePage: React.FC = () => {
 
     return (
-        <div style={{display:"flex"}}>
-     <SideBar/>
-     <TodoCardList/>
-              </div>
+        <div style={{ display: "flex" }}>
+            <SideBar />
+            <TodoCardList />
+        </div>
     )
 }
 
