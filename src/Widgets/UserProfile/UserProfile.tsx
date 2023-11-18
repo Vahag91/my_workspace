@@ -1,6 +1,6 @@
 import React from "react"
 import styles from './UserProfile.module.css'
-import { UserPageProps } from "../../features/Registration/Registration.inteface"
+import { UserPageProps } from "features/Registration/Registration.inteface"
 
 const UserProfile: React.FC<UserPageProps> = ({ user }) => {
 

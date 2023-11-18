@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./SideBar.module.css"
 import { FaClipboardUser, FaClone, FaHouseUser, FaShieldHeart, FaEye, FaPeopleGroup, FaScrewdriverWrench } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 const SideBar: React.FC = () => {
 
     return (
@@ -9,13 +10,13 @@ const SideBar: React.FC = () => {
             <div className={styles.sideBarHead}>
                 <ul>
                     <li>
-                        <a href="#"><span> <FaClipboardUser /> Boards</span> </a>
+                        <Link to="#"><span> <FaClipboardUser /> Boards</span> </Link>
                     </li>
                     <li>
-                        <a href="#"><span> <FaClone /> Template</span> </a>
+                        <Link to="#"><span> <FaClone /> Template</span> </Link>
                     </li>
                     <li>
-                        <a href="#"><span> <FaHouseUser /> Home</span> </a>
+                        <Link to="#"><span> <FaHouseUser /> Home</span> </Link>
                     </li>
 
                 </ul>
@@ -24,17 +25,17 @@ const SideBar: React.FC = () => {
             <div className={styles.sideBarBody}>
                 <ul>
                     <li>
-                        <a href="">
+                        <Link to="">
                             <span> Main
-                            </span> </a>
+                            </span> </Link>
 
 
                         <ul>
-                            <li>  <a href="#"><span><FaClipboardUser /> Boards</span> </a></li>
-                            <li>  <a href="#"><span><FaShieldHeart /> Highlights</span> </a></li>
-                            <li>  <a href="#"><span><FaEye /> Views</span> </a></li>
-                            <li> <a href="#"><span><FaPeopleGroup /> Members</span> </a></li>
-                            <li> <a href="#"><span><FaScrewdriverWrench /> Settings</span> </a></li>
+                            <li>  <Link to="#"><span><FaClipboardUser /> Boards</span> </Link></li>
+                            <li>  <Link to="#"><span><FaShieldHeart /> Highlights</span> </Link></li>
+                            <li>  <Link to="#"><span><FaEye /> Views</span> </Link></li>
+                            <li> <Link to="#"><span><FaPeopleGroup /> Members</span> </Link></li>
+                            <li> <Link to="#"><span><FaScrewdriverWrench /> Settings</span> </Link></li>
                         </ul>
                     </li>
 

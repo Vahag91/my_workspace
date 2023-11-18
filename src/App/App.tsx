@@ -2,14 +2,14 @@ import React, { lazy, Suspense, useEffect, useState } from "react"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { onAuthStateChanged, User, signOut } from "firebase/auth"
 
-import Header from "../widgets/Header"
-import Loading from "../features/Loading"
+import Header from "widgets/Header"
+import Loading from "features/Loading"
 import { auth } from '../firebase'
 
-const MainPage = lazy(() => import('../pages/MainPage'))
-const RegistrationPage = lazy(() => import('../pages/RegistrationPage'))
-const WorkspacePage = lazy(() => import('../pages/WorkspacePage'))
-const UserPage = lazy(() => import('../pages/UserPage'))
+const MainPage = lazy(() => import('pages/MainPage'))
+const RegistrationPage = lazy(() => import('pages/RegistrationPage'))
+const WorkspacePage = lazy(() => import('pages/WorkspacePage'))
+const UserPage = lazy(() => import('pages/UserPage'))
 
 
 

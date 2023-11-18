@@ -1,5 +1,5 @@
 import styles from './UserSidebar.module.css'
-import { RegistrationProps } from '../../features/Registration/Registration.inteface'
+import { RegistrationProps } from 'features/Registration/Registration.inteface'
 
 
 const UserSidebar: React.FC<RegistrationProps> = ({ user, handleSignOut }) => {

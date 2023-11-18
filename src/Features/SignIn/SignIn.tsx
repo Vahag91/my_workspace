@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { auth } from '../../firebase'
+import { auth } from '../../firebase';
 import { GoogleAuthProvider,GithubAuthProvider, signInWithPopup } from 'firebase/auth'
 import styles from './SignIn.module.css'
 import { FaGithub,FaGooglePlus  } from "react-icons/fa6";
