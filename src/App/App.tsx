@@ -43,7 +43,7 @@ const App: React.FC = () => {
                     {authChecked ? (
                         user ? (
                             <Routes>
-                                <Route path="/user" element={<UserPage />} />
+                                <Route path="/user" element={<UserPage user={user}/>}  />
                                 <Route path="/workspace" element={<WorkspacePage />} />
                                 <Route path="/" element={<MainPage />} />
                             </Routes>

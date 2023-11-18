@@ -16,7 +16,7 @@ const SignIn: FC = () => {
         try {
             await signInWithPopup(auth, provider)
         } catch(err){
-            console.log(err, "hhhhhh");
+            console.log(err,);
             
         }
     }

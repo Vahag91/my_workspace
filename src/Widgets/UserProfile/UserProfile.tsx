@@ -1,20 +1,30 @@
 import React from "react"
 import styles from './UserProfile.module.css'
+import { UserPageProps } from "../../features/Registration/Registration.inteface"
 
-const UserProfile: React.FC = () => {
+const UserProfile: React.FC<UserPageProps> = ({ user }) => {
 
     return (
         <div className={styles.user}>
             <div className={styles.userDetails}>
+                {user ? (
+                    <>
+                        <div className={styles.userProfile}>
+                            {user.photoURL ? (
+                            <img src={user.photoURL} alt="user" />
+                            ): null
+                            }
 
-                <div className={styles.userProfile}>
-                    <img src="https://animalworld.com.ua/images/2009/October_09/Animal/Cynomys_ludovicianus/Cynomys_ludovicianus_5.jpg" alt="user photo" />
-                </div>
+                        </div>
 
-                <div className={styles.userInfo}>
-                    <h2> User name</h2>
-                    <p> @example@gmail.com</p>
-                </div>
+                        <div className={styles.userInfo}>
+                            <h2> {user.displayName}</h2>
+                            <p> {user.email}</p>
+                        </div>
+                    </>
+                ): null
+}
+
             </div>
 
             <form >

@@ -5,4 +5,7 @@ import { User } from "firebase/auth"
     user: User | null
 }
 
+export interface UserPageProps{
+    user: User | null
+}
  

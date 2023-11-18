@@ -3,6 +3,7 @@ import styles from './Registration.module.css'
 import { FaUser, FaPaperPlane, FaLock } from "react-icons/fa6";
 import SignIn from "../SignIn";
 import { RegistrationProps } from "./Registration.inteface";
+import { Link } from "react-router-dom";
 
 const Registration: React.FC<RegistrationProps> = ({user,handleSignOut}) => {
 
@@ -30,7 +31,7 @@ const Registration: React.FC<RegistrationProps> = ({user,handleSignOut}) => {
                             <input type="password" name="password" placeholder="password" />
                             <span><FaLock /> </span>
                         </div>
-                        <p>Forgot password? <a href="#">Click Here!</a></p>
+                        <p>Forgot password? <Link to="#">Click Here!</Link></p>
                     </div>
                     <div className={styles.btnGroup}>
                         <button> Sign up</button>
