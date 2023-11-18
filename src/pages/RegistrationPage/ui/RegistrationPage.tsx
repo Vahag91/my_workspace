@@ -1,6 +1,6 @@
 import React from "react";
-import Registration from "../features/Registration";
-import { RegistrationProps } from "../features/Registration/Registration.inteface";
+import Registration from "../../../features/Registration";
+import { RegistrationProps } from "../../../features/Registration/Registration.inteface";
 
 
 const RegistrationPage: React.FC<RegistrationProps> = ({handleSignOut,user}) => {

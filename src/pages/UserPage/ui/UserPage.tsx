@@ -1,5 +1,5 @@
 import React from "react";
-import UserProfile from "../widgets/UserProfile/UserProfile";
+import UserProfile from "../../../widgets/UserProfile/UserProfile";
 
 const UserPage:React.FC = () => {
 
