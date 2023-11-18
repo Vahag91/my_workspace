@@ -13,58 +13,53 @@ const UserPage = lazy(() => import('../pages/UserPage'))
 
 
 
+
+
+
 const App: React.FC = () => {
-
-    const [user, setUser] = useState<User | null>(null)
-
+    const [user, setUser] = useState<User | null>(null);
+    const [authChecked, setAuthChecked] = useState<boolean>(false);
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser)
-        })
-        return unsubscribe
-    }, [])
+            setUser(currentUser);
+            setAuthChecked(true);
+        });
+        return unsubscribe;
+    }, []);
 
     const handleSignOut = () => {
-        signOut(auth).catch(err => console.log(err))
+        signOut(auth).catch(err => console.log(err));
+    };
 
-    }
-
-console.log(user);
+    console.log(user);
 
     return (
         <BrowserRouter>
-            <Header />
-            <button onClick={handleSignOut}> click</button>
+            <Header handleSignOut={handleSignOut} user={user}/>
+
             <div>
                 <Suspense fallback={<Loading />}>
-{user? (
-   <Routes>
-                      
-                       
-                            
-   <Route path="/user" element={<UserPage />} />
-   <Route path="/workspace" element={<WorkspacePage />} />
-   <Route path="/" element={<MainPage />} />
-   </Routes>
-):(
-    <Routes>
-   <Route path="/" element={<RegistrationPage handleSignOut={handleSignOut} user={user} />} />
-    </Routes>
-)
-}
-                 
-                        
-
-
-
-                  
+                    {authChecked ? (
+                        user ? (
+                            <Routes>
+                                <Route path="/user" element={<UserPage />} />
+                                <Route path="/workspace" element={<WorkspacePage />} />
+                                <Route path="/" element={<MainPage />} />
+                            </Routes>
+                        ) : (
+                            <Routes>
+                                <Route path="/" element={<RegistrationPage handleSignOut={handleSignOut} user={user} />} />
+                            </Routes>
+                        )
+                    ) : (
+                        <Loading />
+                    )}
                 </Suspense>
             </div>
         </BrowserRouter>
-    )
-}
+    );
+};
 
-
-export default App
+export default App;
 
