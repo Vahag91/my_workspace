@@ -12,8 +12,7 @@ export interface BoardsState {
 
 const initialState: BoardsState = {
     boardList: [
-        
-        { name: "Board", color: "green" }
+     { name: "Board", color: "green" }
     ]
 }
 
@@ -22,9 +21,11 @@ export const boardSlice = createSlice({
     initialState,
     reducers: {
         setBoard: (state, action: PayloadAction<Boards>) => {
-            state.boardList.push(action.payload)
+            return { 
+                ...state,
+                 boardList: [...state.boardList, action.payload]};
         }
-        }
+    }
 })
 
 export const { setBoard } = boardSlice.actions;
