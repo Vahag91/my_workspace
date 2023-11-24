@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 
 
-export interface UserSlice {
+export interface UserState {
     username: string | null,
     email: string | null,
     password: string | null,
@@ -10,7 +10,7 @@ export interface UserSlice {
 
 }
 
-const initialState: UserSlice = {
+const initialState: UserState = {
     username: "",
     email: "",
     password: "",

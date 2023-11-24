@@ -1,3 +1,3 @@
-import TodoCardList from "./TodoCardList";
+import TodoCardList from "./ui/TodoCardList";
 
 export default TodoCardList

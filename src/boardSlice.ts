@@ -6,12 +6,13 @@ export interface Boards {
     color: string
 }
 
-export interface BoardSlice {
+export interface BoardsState {
     boardList: Boards[]
 }
 
-const initialState: BoardSlice = {
+const initialState: BoardsState = {
     boardList: [
+        
         { name: "Board", color: "green" }
     ]
 }

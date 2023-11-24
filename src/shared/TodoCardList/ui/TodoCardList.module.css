@@ -1,5 +1,11 @@
+.mainDiv{
+    display: flex;
+}
+
 .todoCard {
-    width: 250px;
+    /* display: flex;
+    justify-content: space-between; */
+    max-width: 240px;
     list-style: none;
     background-color: #101204;
     padding: 10px;
@@ -15,6 +21,7 @@
 .title {
     display: flex;
     justify-content: space-between;
+
 }
 
 .title h2 {
