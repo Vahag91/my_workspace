@@ -1,16 +1,20 @@
+import { useDispatch } from "react-redux";
+import { setIsLogged } from "userSlice";
 import { auth } from "../../../firebase";
 import styles from './SignInGithub.module.css'
 import { GithubAuthProvider, signInWithPopup } from "firebase/auth";
 import { FaGithub } from "react-icons/fa6";
 
 
-const signInGithub: React.FC = () => {
+const SignInGithub: React.FC = () => {
 
+    const dispatch = useDispatch()
     const signInGithub = async () => {
         const provider = new GithubAuthProvider()
 
         try {
             await signInWithPopup(auth, provider)
+            dispatch(setIsLogged(true))
         } catch (err) {
             console.log(err);
 
@@ -25,4 +29,4 @@ return (
 }
 
 
-export default signInGithub
+export default SignInGithub

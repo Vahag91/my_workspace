@@ -1,44 +1,30 @@
 import styles from './UserSidebar.module.css'
-import { RegistrationProps } from 'features/Registration/Registration.inteface'
-import { useDispatch } from 'react-redux'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'store'
 import { setIsLogged } from 'userSlice'
 
 
-const UserSidebar: React.FC<RegistrationProps> = () => {
+const UserSidebar: React.FC = () => {
 
-
-    const userEmail = useSelector((state:RootState)=>{
-        return state.user.email
+    const { email, username, isLogged, userPhotoUrl} = useSelector((state: RootState) => {
+        return state.user
     })
-    const userName = useSelector((state:RootState)=>{
-        return state.user.username
-    })
-    
 
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
 
-    const isLogged = useSelector((state:RootState)=>{
-        return state.user.isLogged
-    })
-    
     return (
         <div className={styles.userSidebar}>
-
-            {isLogged ?  (
+            {isLogged ? (
                 <>
                     <div className={styles.userInfo}>
-                        <span> {userName}</span>
-                        <span> {userEmail}</span>
-                        
-                        {/* {
-                            user.photoURL ? (
-                                <img src={user.photoURL} alt="userPhoto" />
-                            ) : null
-                        } */}
+                        <span> {username}</span>
+                        <span> {email}</span>
 
+                        {userPhotoUrl ? (
+                            <img src={userPhotoUrl} alt="userPhoto" />
+                        ) : null
+                        }
                     </div>
 
                     <div className={styles.userSettings}>
@@ -46,10 +32,11 @@ const UserSidebar: React.FC<RegistrationProps> = () => {
                             <li> Managa Account</li>
                             <li> Cards </li>
                             <li>
-                                <button type='button' onClick={()=> dispatch(setIsLogged())}> Log Out</button>
+                                <button type='button' onClick={() => dispatch(setIsLogged(false))}> Log Out</button>
                             </li>
                         </ul>
                     </div>
+
                 </>
             ) : null}
 

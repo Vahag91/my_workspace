@@ -2,10 +2,11 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 
 
-  export interface UserState {
+export interface UserState {
     username: string | null,
     email: string | null,
     password: string | null,
+    userPhotoUrl: string | null
     isLogged: boolean
 
 }
@@ -14,6 +15,7 @@ const initialState: UserState = {
     username: "",
     email: "",
     password: "",
+    userPhotoUrl: "",
     isLogged: false
 }
 
@@ -30,12 +32,15 @@ export const userSlice = createSlice({
         setPassword: (state, action: PayloadAction<string | null>) => {
             state.password = action.payload;
         },
-        setIsLogged: (state) => {
-            state.isLogged = !state.isLogged
+        setUserPhotoUrl: (state, action: PayloadAction<string|null>) => {
+            state.userPhotoUrl = action.payload
+        },
+        setIsLogged: (state, action: PayloadAction<boolean>) => {
+            state.isLogged = action.payload
         }
 
     }
 })
 
-export const { setUsername, setEmail, setPassword, setIsLogged } = userSlice.actions;
+export const { setUsername, setEmail, setPassword,setUserPhotoUrl, setIsLogged } = userSlice.actions;
 export default userSlice.reducer;

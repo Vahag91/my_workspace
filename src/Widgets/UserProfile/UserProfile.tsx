@@ -5,29 +5,27 @@ import { RootState } from "store"
 
 const UserProfile: React.FC = () => {
 
-const userEmail = useSelector((state:RootState)=>{
-    return state.user.email
+const { email,username,userPhotoUrl} = useSelector((state:RootState)=>{
+    return state.user
 })
-const userName = useSelector((state:RootState)=>{
-    return state.user.username
-})
+
 
     return (
         <div className={styles.user}>
             <div className={styles.userDetails}>
-                {userName ? (
+                {username ? (
                     <>
                         <div className={styles.userProfile}>
-                            {/* {user.photoURL ? (
-                            <img src={user.photoURL} alt="user" />
+                            {userPhotoUrl ? (
+                            <img src={userPhotoUrl} alt="user" />
                             ): null
-                            } */}
+                            }
 
                         </div>
 
                         <div className={styles.userInfo}>
-                            <h2> {userName}</h2>
-                            <p> {userEmail}</p>
+                            <h2> {username}</h2>
+                            <p> {email}</p>
                         </div>
                     </>
                 ): null

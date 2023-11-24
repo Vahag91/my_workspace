@@ -8,20 +8,6 @@ import styles from './SignUpEmailAndPass.module.css'
 
 const SignUpEmailAndPass: React.FC = () => {
 
-
-
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
-
-    // const signUp = async () => {
-
-    //     try {
-    //         await createUserWithEmailAndPassword(auth, email, password)
-    //     } catch (err) {
-    //         console.log(err,);
-    //     }
-    // }
-
     let userEmail = ""
     let userPassword = ""
     let userName = ""
@@ -42,7 +28,7 @@ const SignUpEmailAndPass: React.FC = () => {
         dispatch(setEmail(userEmail))
         dispatch(setPassword(userPassword))
         dispatch(setUsername(userName))
-        dispatch(setIsLogged())
+        dispatch(setIsLogged(true))
     }
 
 
@@ -93,3 +79,15 @@ const SignUpEmailAndPass: React.FC = () => {
 
 export default SignUpEmailAndPass
 
+
+// const [email, setEmail] = useState("");
+// const [password, setPassword] = useState("");
+
+// const signUp = async () => {
+
+//     try {
+//         await createUserWithEmailAndPassword(auth, email, password)
+//     } catch (err) {
+//         console.log(err,);
+//     }
+// }

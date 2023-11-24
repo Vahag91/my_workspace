@@ -2,18 +2,25 @@ import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 import styles from './Header.module.css';
-import { FaSistrix, FaList, FaClipboardUser, FaRegBell, FaRegCircleQuestion } from "react-icons/fa6";
-import { RegistrationProps } from "features/Registration/Registration.inteface";
-import UserSidebar from "widgets/UserSidebar";
+import { FaSistrix, FaList, FaClipboardUser, FaRegBell, FaRegCircleQuestion } from "react-icons/fa6";import UserSidebar from "widgets/UserSidebar";
+import { useSelector } from "react-redux";
+import { RootState } from "store";
 
 
-const Header: React.FC<RegistrationProps> = ({ user, handleSignOut }) => {
+const Header: React.FC = () => {
+
 
     const [userMenuOpen, setUserMenuOpen] = useState<boolean>(false)
+
+    const usersPhoto = useSelector((state:RootState)=>{
+        return state.user.userPhotoUrl
+    })
 
     const handleUserMenuOpeb = (): void => {
         setUserMenuOpen(!userMenuOpen)
     }
+
+
 
     return (
         <header>
@@ -44,16 +51,16 @@ const Header: React.FC<RegistrationProps> = ({ user, handleSignOut }) => {
 
                             <li>
                                 <div className={styles.userPhoto} onClick={handleUserMenuOpeb}>
-                                    {user?.photoURL ? (
-                                        <img src={user?.photoURL} alt="Userphoto" />
+                                    {usersPhoto ? (
+                                        <img src={usersPhoto} alt="Userphoto" />
                                     ) : null}
 
                                 </div>
                             </li>
                         </ul>
                         {userMenuOpen ? (
-                            <UserSidebar handleSignOut={handleSignOut} user={user} />
-                        ) : null}
+                          <UserSidebar/>
+                        ) : (null)}
 
                     </div>
                 </div>
