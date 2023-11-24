@@ -23,6 +23,7 @@ const Board: React.FC = () => {
 
     const dispatch = useDispatch()
 
+console.log(myBoard);
 
     const hanldeNewBoard = (event: React.ChangeEvent<HTMLInputElement>): void => {
         const addedBoard: string = event.target.value.trim()

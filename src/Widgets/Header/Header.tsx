@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from './Header.module.css';
-import { FaSistrix, FaList, FaClipboardUser, FaRegBell, FaRegCircleQuestion } from "react-icons/fa6";import UserSidebar from "widgets/UserSidebar";
+import { FaSistrix, FaList, FaClipboardUser, FaRegBell, FaRegCircleQuestion } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import { RootState } from "store";
+import UserSidebar from "widgets/UserSidebar";
 
 
 const Header: React.FC = () => {
@@ -31,16 +31,14 @@ const Header: React.FC = () => {
                     <li> <Link to="#"> <span><FaClipboardUser /> Trello</span></Link></li>
                     <li> <Link to="board"> <span>BoardPage</span></Link></li>
                     <li> <Link to="/user"> <span>User</span></Link></li>
-                    <li> <Link to="/registration"> <span>Registration </span></Link></li>
                     <li> <Link to="/workspace"> <span>Workspace</span></Link></li>
-
-                </ul>
+                        </ul>
 
 
                 <div className={styles.navList}>
 
                     <div className={styles.searchBox}>
-                        <input type="text" placeholder="      Search" />
+                        <input type="text" placeholder="Search" />
                         <span className={styles.searchIcon}><FaSistrix /></span>
                     </div>
                     
