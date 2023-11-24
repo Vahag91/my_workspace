@@ -1,7 +1,6 @@
 import React from "react"
 import styles from './Registration.module.css'
 import { FaUser, FaPaperPlane, FaLock } from "react-icons/fa6";
-import SignIn from "../SignIn";
 import { RegistrationProps } from "./Registration.inteface";
 import { Link } from "react-router-dom";
 
@@ -38,7 +37,7 @@ const Registration: React.FC<RegistrationProps> = ({user,handleSignOut}) => {
                         <button> Log in </button>
                     
                     </div>
-                    <SignIn/>
+                 
                 </form>
             </div>
         </div>

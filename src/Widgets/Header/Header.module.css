@@ -7,10 +7,11 @@ ul {
 }
 
 
+
 header {
     background-color: #1D2125;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 5%;
 }
 
 header span {
@@ -78,6 +79,7 @@ a {
 
 
 .searchBox {
+
     position: relative;
 }
 

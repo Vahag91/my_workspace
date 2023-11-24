@@ -22,7 +22,7 @@ const Header: React.FC<RegistrationProps> = ({ user, handleSignOut }) => {
                 <ul className={styles.navList}>
                     <li> <Link to="#"> <span><FaList /> </span></Link></li>
                     <li> <Link to="#"> <span><FaClipboardUser /> Trello</span></Link></li>
-                    <li> <Link to="/"> <span>MainPage</span></Link></li>
+                    <li> <Link to="board"> <span>BoardPage</span></Link></li>
                     <li> <Link to="/user"> <span>User</span></Link></li>
                     <li> <Link to="/registration"> <span>Registration </span></Link></li>
                     <li> <Link to="/workspace"> <span>Workspace</span></Link></li>

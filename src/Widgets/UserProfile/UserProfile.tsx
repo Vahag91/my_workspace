@@ -1,25 +1,33 @@
 import React from "react"
 import styles from './UserProfile.module.css'
-import { UserPageProps } from "features/Registration/Registration.inteface"
+import { useSelector } from "react-redux"
+import { RootState } from "store"
 
-const UserProfile: React.FC<UserPageProps> = ({ user }) => {
+const UserProfile: React.FC = () => {
+
+const userEmail = useSelector((state:RootState)=>{
+    return state.user.email
+})
+const userName = useSelector((state:RootState)=>{
+    return state.user.username
+})
 
     return (
         <div className={styles.user}>
             <div className={styles.userDetails}>
-                {user ? (
+                {userName ? (
                     <>
                         <div className={styles.userProfile}>
-                            {user.photoURL ? (
+                            {/* {user.photoURL ? (
                             <img src={user.photoURL} alt="user" />
                             ): null
-                            }
+                            } */}
 
                         </div>
 
                         <div className={styles.userInfo}>
-                            <h2> {user.displayName}</h2>
-                            <p> {user.email}</p>
+                            <h2> {userName}</h2>
+                            <p> {userEmail}</p>
                         </div>
                     </>
                 ): null

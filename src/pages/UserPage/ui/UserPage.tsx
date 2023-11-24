@@ -2,12 +2,12 @@ import React from "react";
 import UserProfile from "widgets/UserProfile/UserProfile";
 import { UserPageProps } from "features/Registration/Registration.inteface";
 
-const UserPage:React.FC<UserPageProps> = ({user}) => {
+const UserPage:React.FC = () => {
 
     return (
 
         <div> 
-             <UserProfile user={user}/>
+             <UserProfile/>
               </div>
     )
 }

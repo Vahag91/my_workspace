@@ -8,7 +8,7 @@
 .card {
     width: 90%;
     max-width: 350px;
-    height: 550px;
+    height: 500px;
     position: absolute;
     top: 45%;
     left: 50%;
@@ -20,7 +20,8 @@
 
 .card h2 {
     font-size: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+    margin-top: 0px;
     color: #3c00d0;
     position: relative;
 }
@@ -46,53 +47,29 @@
     color: #3c00d0;
 }
 
-.formField {
-    background: #eaeaea;
-    margin: 15px 0;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.line {
+    opacity: 0.5;
+    border-top: 1px solid #000;
+    margin: 20px 10px 0;
+    padding: 10px;
 }
 
-.formField input {
-    width: 75%;
-    background: transparent;
-    outline: 0;
-    border: 0;
-    padding: 7px 15px;
-    margin-top: 20px;
-}
-
-.formField span {
-    position: relative;
-    left: -45%;
-    top: -25px;
-    color: #6c6868;
-    font-size: 20px;
-
-}
-
-
-.btnGroup {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.line span {
+font-weight: bold;
 }
 
 .btnGroup button {
-    flex-basis:  45%;
-    background: #3c00d0;
-    color: #fff;
-    height: 40px;
-    border-radius: 20px;
-    border: 0;
-    outline: 0;
+    margin: 0px 8px;
+    background-color: inherit;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .btnGroup button:hover {
-    background: #5a2ee4; 
-    transform: scale(1.05); 
+    background-color: #dfe4eb;
+    transform: scale(1.09);
 }

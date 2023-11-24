@@ -1,22 +1,23 @@
  .sideBar {
      display: flex;
      flex-direction: column;
-     width: 300px;
+     background-color: #1D2125;
+     margin: 50px 30px 0;
      max-height: 90vh;
-     background-color: #1D2125
+     padding: 0 16px;
 
- 
+     top: 40px;
+     width: 256px;
  }
 
  .sideBar span {
-    font-size: 24px;
-    font-weight: bold;
-  color: rgb(227, 231, 234);
+     font-size: 18px;
+     font-weight: bold;
+     color: rgb(227, 231, 234);
  }
 
  .sideBar li {
      list-style: none;
-     
  }
 
 
@@ -35,37 +36,31 @@
 
 
  .sideBarBody ul {
-    margin: 0px 20px;
-    padding: 10px;
-}
+     margin: 0px 20px;
+     padding: 10px;
+ }
 
-.sideBarBody ul li  {
-    margin: 5px 0;
-    padding: 4px;
-    transition: background-color 0.3s, border-radius 0.3s;
-}
-
-
- 
+ .sideBarBody ul li {
+     margin: 5px 0;
+     padding: 4px;
+     transition: background-color 0.3s, border-radius 0.3s;
+ }
 
 
 
-
-
-
-.sideBarHead ul {
+ .sideBarHead ul {
      margin: 0;
      padding: 10px;
 
  }
 
  .sideBarHead ul li {
-    margin: 5px 0;
-    padding: 4px;
-    transition: background-color 0.3s, border-radius 0.3s;
-}
+     margin: 5px 0;
+     padding: 4px;
+     transition: background-color 0.3s, border-radius 0.3s;
+ }
 
-.sideBarHead ul li:hover {
+ .sideBarHead ul li:hover {
      background-color: rgb(96, 96, 117);
      border-radius: 10px;
  }
