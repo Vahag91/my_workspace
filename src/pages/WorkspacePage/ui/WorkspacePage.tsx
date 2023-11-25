@@ -1,5 +1,5 @@
 import React from "react";
-import SideBar from "widgets/SideBar";
+import SideBar from "widgetss/SideBar";
 import TodoCardList from "shared/TodoCardList";
 
 const WorkspacePage: React.FC = () => {

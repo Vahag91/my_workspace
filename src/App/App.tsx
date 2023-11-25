@@ -8,7 +8,7 @@ import { RootState } from "store"
 
 import BoardPage from "pages/BoardPage"
 import WelcomePage from "pages/WelcomePage"
-import Header from "widgets/Header"
+import Header from "widgetss/Header"
 import Loading from "features/Loading"
 
 

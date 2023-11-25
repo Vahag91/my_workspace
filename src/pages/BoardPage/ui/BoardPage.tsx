@@ -1,6 +1,6 @@
 
-import SideBar from 'widgets/SideBar'
-import Board from 'widgets/Board'
+import SideBar from 'widgetss/SideBar'
+import Board from 'widgetss/Board'
 import styles from './BoardPage.module.css'
 
 

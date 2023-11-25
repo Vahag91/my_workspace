@@ -4,7 +4,7 @@ import styles from './Header.module.css';
 import { FaSistrix, FaList, FaClipboardUser, FaRegBell, FaRegCircleQuestion } from "react-icons/fa6";
 import { useSelector } from "react-redux";
 import { RootState } from "store";
-import UserSidebar from "widgets/UserSidebar";
+import UserSidebar from "widgetss/UserSidebar";
 
 
 const Header: React.FC = () => {
